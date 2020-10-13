@@ -21,17 +21,18 @@ ul{
 }
 
 /* colors:
-a698ff  -   a nice lavender color
-000000  -   black
-ffffff  -   white
-303030  -   dark grey
+a698ff  -  a nice lavender color
+000000  -  black
+ffffff  -  white
+303030  -  dark grey
+00db00  -  green
 */
 
 
 /* header */
 header{
     background: #303030 ;
-    color:#ffffff;
+    color:#00db00;
     font-size: 40;
     min-height: 70px;
     border-bottom: #e8491d 3px solid;
