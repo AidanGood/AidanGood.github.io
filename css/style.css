@@ -20,9 +20,17 @@ ul{
     padding: 0;
 }
 
+/* colors:
+a698ff  -   a nice lavender color
+000000  -   black
+ffffff  -   white
+303030  -   dark grey
+*/
+
+
 /* header */
 header{
-    background: #a698ff ;
+    background: #303030 ;
     color:#ffffff;
     font-size: 40;
     min-height: 70px;
