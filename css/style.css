@@ -32,7 +32,7 @@ ffffff  -  white
 /* header */
 header{
     background: #303030 ;
-    color:#00db00;
+    color:#ffffff;
     font-size: 40;
     min-height: 70px;
     border-bottom: #e8491d 3px solid;
@@ -64,6 +64,10 @@ header nav{
     margin-right: 150px;
 }
 
+header .highlight{
+    color: #00db00;
+}
+
 header .current a{
     color: #e8491d;
     font-weight: bold;
@@ -74,3 +78,20 @@ header a:hover{
 }
 
 /* Showcase */
+#showcase{
+    min-height: 400px;
+    background:url('../image/MainScreenBackground.png') no-repeat 0 -400px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#showcase h1{
+    margin-top: 35px;
+    font-size: 30px;
+}
+
+#showcase p{
+    font-size: 20px;
+}
+
+/* Frontpage */
