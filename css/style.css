@@ -2,15 +2,15 @@ body{
     font-family:  'New Courier', Courier, monospace;
     font: size 15px;
     line-height: 1.5;
-
+    color: #ffffff;
     padding: 0;
     margin: 0;
-    background-color: aliceblue;
+    background-color: #303030;
 }
 
 /* Global */
 .container{
-    width: 80%;
+    width: 75%;
     margin: auto;
     overflow: hidden;
 }
@@ -26,6 +26,7 @@ a698ff  -  a nice lavender color
 ffffff  -  white
 303030  -  dark grey
 00db00  -  green
+e8491d  -  nice red
 */
 
 
@@ -33,8 +34,8 @@ ffffff  -  white
 header{
     background: #303030 ;
     color:#ffffff;
-    font-size: 40;
-    min-height: 70px;
+    font-size: 15px;
+    min-height: 50px;
     border-bottom: #e8491d 3px solid;
 }
 
@@ -42,7 +43,7 @@ header a{
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 
@@ -80,18 +81,57 @@ header a:hover{
 /* Showcase */
 #showcase{
     min-height: 400px;
-    background:url('../image/MainScreenBackground.png') no-repeat 0 -400px;
+    background:url('../image/mainscreenbackground.png') no-repeat 0 -400px;
     text-align: center;
     color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #showcase h1{
     margin-top: 35px;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 #showcase p{
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /* Frontpage */
+#frontpage{
+    margin-top: 20px;
+}
+
+#frontpage .sectional{
+    float: left;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+}
+
+#frontpage .sectional img{
+    width: 200px;
+}
+
+#frontpage .sectional .github{
+    width: 150px;
+}
+
+#frontpage .sectional .bucknell{
+    width: 230px;
+}
+
+.link{
+    color: #e8491d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Footer */
+footer{
+    padding: 20px;
+    margin-top: 450px;
+    font-size: 20px;
+    background-color: #e8491d;
+    text-align: center;
+}
