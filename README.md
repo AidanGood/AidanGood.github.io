@@ -1,4 +1,8 @@
-# AidanGood.github.io
-## My website I've created with github pages and is still a work-in-progress
+# [www.aidangood.com](https://www.aidangood.com)]
+## My website I've created with github pages 
 
-Will hopefully have more time once classes are over for winter break to fully flesh it out and polish the (very rough) design
+Built with basic HTML and CSS I taught myself between classes, so excuse the rough design.
+
+Future plans include a complete site redesign once winter break arrives and I can put more time towards this. 
+
+
