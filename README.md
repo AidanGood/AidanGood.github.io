@@ -1,4 +1,4 @@
-# [www.aidangood.com](https://www.aidangood.com)]
+# [www.aidangood.com](https://www.aidangood.com)
 ## My website I've created with github pages 
 
 Built with basic HTML and CSS I taught myself between classes, so excuse the rough design.
