@@ -5,7 +5,7 @@ body{
     color: #ffffff;
     padding: 0;
     margin: 0;
-    background-color: #303030;
+    background-color: #000000;
     height: 100%;
     position: relative;
 }
@@ -16,6 +16,7 @@ body{
     margin: auto;
     overflow: hidden;
     position: relative;
+    border: 2px solid magenta;
 }
 
 .main-container{
@@ -43,7 +44,7 @@ e8491d  -  nice red
 
 /* header */
 header{
-    background: #303030 ;
+    background: #000000 ;
     color:#ffffff;
     font-size: 15px;
     min-height: 50px;
