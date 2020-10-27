@@ -16,7 +16,7 @@ body{
     margin: auto;
     overflow: hidden;
     position: relative;
-    /*border: 2px solid magenta;*/
+    /* border: 2px solid magenta; */
 }
 
 .main-container{
@@ -86,8 +86,8 @@ header .current a{
     font-weight: bold;
 }
 
-header a:hover{
-    color: #cccccc;
+a:hover{
+    color: #00db00;
 }
 
 /* Showcase */
