@@ -1,8 +1,8 @@
 # [www.aidangood.com](https://aidangood.com)
-## My website I've created with github pages 
+## My website I've created, hosted with github pages 
 
-Built with basic HTML and CSS I taught myself between classes, so excuse the rough design.
+Built with basic HTML and CSS I taught myself between classes.
 
-Future plans include a complete site redesign once winter break arrives and I can put more time towards this. 
+
 
 
