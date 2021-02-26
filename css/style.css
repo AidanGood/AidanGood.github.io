@@ -175,7 +175,7 @@ footer{
 }
 
 /* Mobile Webpage */
-@media only screen and (max-width: 812px) {
+@media only screen and (max-width: 1000px) {
     header a {
         font-size: 20px;
     }
