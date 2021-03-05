@@ -174,9 +174,11 @@ footer{
 @media only screen and (max-width: 1000px) {
     .container{
         width: 90%;
-        overflow: visible;
+        margin: auto;
+        overflow: auto;
+        position: relative;
     }
-    
+
     header a {
         font-size: 20px;
     }
@@ -186,6 +188,7 @@ footer{
         display: grid;
         text-align: center;
         justify-content: center;
+    
     }
 
     #frontpage .sectional{
