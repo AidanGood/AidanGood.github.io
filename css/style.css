@@ -175,7 +175,7 @@ footer{
     .container{
         width: 90%;
         margin: auto;
-        overflow: auto;
+        overflow: hidden;
         position: relative;
     }
 
