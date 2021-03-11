@@ -91,7 +91,7 @@ a:hover{
 
 /* Showcase */
 #showcase{
-    min-height: 300px;
+    min-height: 250px;
     text-align: center;
     color: #ffffff;
     margin-left: 20px;
@@ -104,11 +104,9 @@ a:hover{
 }
 
 #showcase p{
-    font-size: 25px;
-    line-height: 1.1;
+    font-size: 18px;
+    line-height: 0.1;
 }
-
-
 
 /* Frontpage */
 #frontpage{
@@ -124,7 +122,7 @@ a:hover{
 }
 
 #frontpage .sectional{
-    float: left;
+    float: center;
     text-align: center;
     width: 30%;
     padding: 20px;
@@ -155,6 +153,19 @@ a:hover{
     margin-right: 20px;
 }
 
+/* mainAbout */
+#mainAbout{
+    margin: 0px 50px 150px 50px;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* Chapter */
+#Chapter{
+    margin-top: 10px;
+    text-align: center;
+}
+
 /* Footer */
 footer{
     display:flex;
@@ -175,7 +186,7 @@ footer{
     .container{
         width: 90%;
         margin: auto;
-        overflow: hidden;
+        overflow: auto;
         position: relative;
     }
 
@@ -188,11 +199,12 @@ footer{
         display: grid;
         text-align: center;
         justify-content: center;
-    
+        margin-left: 40px ;
     }
 
     #frontpage .sectional{
         float: center;
         width: 80%;
+        /* border: 2px solid blue; */
     }
 }
