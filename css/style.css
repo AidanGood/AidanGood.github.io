@@ -16,7 +16,7 @@ body{
     margin: auto;
     overflow: hidden;
     position: relative;
-    /* border: 2px solid magenta; */
+    border: 2px solid magenta;
 }
 
 .main-container{
@@ -155,9 +155,10 @@ a:hover{
 
 /* mainAbout */
 #mainAbout{
-    margin: 0px 50px 150px 50px;
+    margin: -50px 250px 150px 250px;
     text-align: left;
     font-size: 20px;
+    
 }
 
 /* Chapter */
