@@ -155,10 +155,9 @@ a:hover{
 
 /* mainAbout */
 #mainAbout{
-    margin: -50px 250px 150px 250px;
-    text-align: left;
+    margin: -50px 250px 100px 250px;
+    text-align: center;
     font-size: 20px;
-    margin-left: 250px
 }
 
 /* Chapter */
