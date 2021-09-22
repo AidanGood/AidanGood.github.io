@@ -207,4 +207,8 @@ footer{
         width: 80%;
         /* border: 2px solid blue; */
     }
+
+    #mainAbout{
+        margin: -50px 25px 100px 25px;
+    }
 }
