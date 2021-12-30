@@ -232,7 +232,7 @@ footer{
         margin: auto;
         overflow: auto;
         position: relative;
-        border: 2px solid magenta;
+        /* border: 2px solid magenta; */
     }
 
     header a {
