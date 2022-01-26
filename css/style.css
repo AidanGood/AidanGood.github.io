@@ -1,11 +1,14 @@
 body{
-    font-family: Lato;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
     font: size 15px;
     line-height: 1.5;
-    color: #ffffff;
+    color: #dddddd;
     padding: 0;
     margin: 0;
-    background-color: #2a2f3b;
+    background-color: #141414;
     height: 100%;
     position: relative;
 }
@@ -33,14 +36,14 @@ ul{
 }
 
 .link{
-    color: #ff0000;
+    color: #e00000;
     font-weight: bold;
     text-decoration: none;
 }
 
 a{
     text-decoration: none;
-    color: #ff0000;
+    color: #e00000;
 }
 
 /* colors:
@@ -53,17 +56,21 @@ ff0000  -  red
 6800c9  -  purple
 
 Color Scheme:
-bluish-grey: 383d4b
-red as above
+darker-grey: 777777
+dark-grey: 999999
+off-white: dddddd
+dimmer red: e00000
 orange: ff6600
+
+
 
 */
 
 
 /* header */
 header{
-    background: #2a2f3b ;
-    color:#ffffff;
+    background: #141414 ;
+    color:#dddddd;
     font-size: 20px;
     min-height: 50px;
     border-bottom: #ff0000 3px solid;
@@ -76,7 +83,7 @@ header h1{
 }
 
 header a{
-    color: #ffffff;
+    color: #999999;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 25px;
@@ -101,22 +108,22 @@ header nav{
 }
 
 header .highlight{
-    color: #ff6600;
+    color: #888888;
 }
 
 header .current a{
-    color: #ff0000;
+    color: #e00000;
     font-weight: bold;
 }
 
 a:hover{
-    color: #ff6600;
+    color: #666666;
 }
 
 /* Showcase */
 #showcase{
     text-align: center;
-    color: #ffffff;
+    color: #dddddd;
     padding: 20px 0px 0px 0px;
     font-size: 25px;
     line-height: 0;
@@ -142,11 +149,11 @@ a:hover{
 }
 
 #frontbody p{
-    font-size: 19px;
+    font-size: 22px;
 }
 
 #frontbody h3{
-    font-size: 22px;
+    font-size: 24px;
 }
 
 #frontbody .fbproject{
@@ -171,7 +178,7 @@ a:hover{
 
 #frontbody a:hover{
     text-decoration: none;
-    color: #ff6600;
+    color: #777777;
 }
 
 /* Bottom */
@@ -210,6 +217,29 @@ a:hover{
     text-align: center;
 }
 
+/* CSCI 332 Page */
+#main332{
+    margin: 20px 250px 150px 250px;
+    text-align: left;
+    font-size: 20px;
+}
+
+#main332 .container{
+    margin: auto;
+}
+
+#main332 #Chapter{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image332{
+    text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Footer */
 footer{
     display:flex;
@@ -218,7 +248,7 @@ footer{
     font-size: 20px;
     position: absolute;
     bottom: 0;
-    background-color: #ff0000;
+    background-color: #e00000;
     width: 100%;
     justify-content:center;
     align-items:center;
