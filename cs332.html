@@ -37,31 +37,59 @@
             <section id="main332">
                 <div class="container">
                     <h3 id="Chapter">Week 1</h3>
-                    <h4 id="Chapter" style="font-family: monospace; line-height: 0;">Hello_World</h4>
+                    <h4 id="Chapter" style="font-family: monospace; line-height: 0;">Hello_World.c</h4>
                     <div class="text-container">
                         <p>
                             This first week was spent setting up the Espressif ESP32-S2 and accompanying ESP-IDF software, as well as contemplating what the "Internet of Things" is.
-                             By the end of the week I had managed to run the included "hello_world" program from the VSC extension. <br> <br> The Internet of Things is a pretty big buzzword
-                             nowadays, but the <a class="link" href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">wikipedia article</a> I think does 
-                             a decent job at providing a definition that we can use: "The (IoT) describes physical objects that are embedded with sensors, processing ability,
-                              software, and other technologies that connect and exchange data with other devices and systems over the Internet or other communications networks".
-                              Looking around there are many different sub-categories that we can apply this to, but mainly we'll be sticking with consumer-focused products and 
-                              solutions. Think smart thermostats and smart toasters. Small items where adding this can add convience to everyday items people use regularly.<br>
-                              <div class=image332>
+                            By the end of the week I had managed to run the included "hello_world" program from the VSC extension. <br> <br> The Internet of Things is a pretty big buzzword
+                            nowadays, but the <a class="link" href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">wikipedia article</a> I think does 
+                            a decent job at providing a definition that we can use: "The (IoT) describes physical objects that are embedded with sensors, processing ability,
+                            software, and other technologies that connect and exchange data with other devices and systems over the Internet or other communications networks".
+                            Looking around there are many different sub-categories that we can apply this to, but mainly we'll be sticking with consumer-focused products and 
+                            solutions. Think smart thermostats and smart toasters. Small items where adding this can add convience to everyday items people use regularly.<br>
+                            <div class=image332>
                                 <img src="./image/esp-s2.jpg" alt="The ESP-S2 Dev Board" style="width:300px;height:250px;">
                                 <br>The ESP32-S2 Dev Board 
-                              </div>
+                            </div>
                             <br> <br>
-                            <a id="quick-jump-point"></a>
+                            <a id="week2"></a>
                         </p>
                     </div>
                     <h3 id="Chapter">Week 2</h3>
-                    <h4 id="Chapter" style="font-family: monospace; line-height: 0;">#define BLINK_GPIO CONFIG_BLINK_GPIO</h4>
+                    <h4 id="Chapter" style="font-family: monospace; line-height: 0;">Peripherals_Intro.c</h4>
                     <div class="text-container">
                         <p>
-                            This week is all hands on with the dev board, and learning what tricks it can do. <br>
-                            First thing done was to explore the provided example files that controlled the board preipherals. Initially running the blink file results
-                            in a blinding strobe of colors from the RBG LED, but after some slight modifications I made it more pleasant to look at. 
+                            This week was spent diving into the preipherals of this board.<br>
+                            First thing this week was to take a look at the included <span class="code">led_strip_main</span> program. Whoever wrote that code probably did so with malicious intent, as it 
+                            is way too bright and flashes way too fast to look at. Immediately I modified the brightness down from <span class="code">100</span> to a more manageble <span style="font-family: monospace; font-size: 17px;">5</span>. 
+                            After this I messed around with the timing, and ended up removing <span class="code">strip->clear(strip, 50);</span> to stop the RGB from rapidly flashing.
+                             I also lowered the color shift amount to make the color transition smoother. <br> 
+                            <div class=image332>
+                                <img src="./image/fast_led.gif" alt="The ESP-S2 Dev Board" style="width:205px;height:235px;">
+                                <img src="./image/slow_led.gif" alt="The ESP-S2 Dev Board" style="width:205px;height:235px;">
+                                <br>The original (left) and my improved (right) RBG LED code. 
+                            </div>
+                            <br>
+                            After this I moved onto taking a look at the GPIO pins. <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/peripherals/gpio.html?highlight=gpio_config_t#" target="_blank">Here it is in the Espressif documentation</a>.
+                            By studying both the provided gpio example code and documentation, I have learned about how to properly configure the pins and I will outline the process: <br>
+                            The <span class="code">gpio_config()</span> function is what configures the GPIO pins, and takes a <span class="code">gpio_config_t</span> struct that sets the pin's Mode, Pull-Up/Pull-Down, and interrupt type.
+                            <br> To select which pins the desired functions are applied to, a bit mask is given where each bit represents a specific pin. To do this, simply bit left shift by the pin number on an unsigned long long 1 (64 bits) to get the target pin. <br>
+                            Example: <span class="code">(1ULL&lt;&lt;14)</span> will make a bit mask that targets pin 14. To target multiple pins use | (the OR operator) between each individual bit mask to get the 
+                            final bit mask targeting all wanted pins. It's really just some simple bit logic.<br>
+                            Once the <span class="code">gpio_config_t</span> struct is all set to the desired values, pass the address of the struct to <span class="code">gpio_config()</span> will apply those settings to the targeted pins. <br>
+                            To set the input pin's interrupt type (what kind of input will trigger an interrupt) you use the <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/peripherals/gpio.html?highlight=gpio_config_t#_CPPv418gpio_set_intr_type10gpio_num_t15gpio_int_type_t" target="_blank"><span class="code">gpio_set_intr_type()</span></a> function.
+                            The documentation is clear on how to use this in my opinion, and contains links to the different interrupt types. <br>
+                            Since multiple GPIO interrupts can occur at the same time, or during a previous interrupt event, it is a good idea to create a queue so that
+                            none of these accidentally get ignored. This is done by the following line of code: <span class="code">gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));</span>. Here's a quick doc link to <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/system/freertos.html?highlight=xqueuecreate#c.xQueueCreate">xQueueCreate()</a>. <br>
+                            In addition to the queue, we can now set up a thread to handle the tasks we want to occur once a GPIO interrupt occurs. <span class="code">xTaskCreate(gpio_task_example, "gpio_task_example", 2048, NULL, 10, NULL);</span>. Here's the <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/system/freertos.html?highlight=xtaskcreate#_CPPv411xTaskCreate14TaskFunction_tPCKcK8uint32_tPCv11UBaseType_tPC12TaskHandle_t">xTaskCreate()</a> doc. <br>
+                            However, we need to hook the GPIO interrupts to the ISR, so that they... interrupt. Kinda important they get handled. This is handled with 3 different functions: <br>
+                            <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/peripherals/gpio.html?highlight=gpio_install_isr_service#_CPPv424gpio_install_isr_servicei" target="_blank"><span class="code">gpio_install_isr_service()</span></a> which sets up some stuff that is not important enough to know right now. <br>
+                            <span class="code">gpio_isr_handler_add()</span> which is done to hook a pin. <br>
+                            And <span class="code">gpio_isr_handler_remove()</span> to remove a pin. <br>
+                            Docs for these are right below the doc section for the <span class="code">gpio_install_isr_service()</span>. <br>
+                            <br> Once all of this is done, it is time to throw together the <span class="code">while(1)</span> loop, which is where you tell the output pins what to output.
+                            This is done with <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/peripherals/gpio.html?highlight=gpio_set_level#_CPPv414gpio_set_level10gpio_num_t8uint32_t" target="_blank"><span class="code">gpio_set_level()</span></a>. And that's all there is to configuring the GPIO pins.
+                            <br> For our future presentation my group decided to work on the <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/touch_pad.html#introduction" target="_blank">touch sensor</a>.
                             <br> <br>
                             <a id="quick-jump-point"></a>
                             <br>

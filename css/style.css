@@ -233,6 +233,11 @@ a:hover{
     text-align: center;
 }
 
+#main332 .code{
+    font-family: monospace; 
+    font-size: 17px;
+}
+
 .image332{
     text-align:center;
     display: block;
@@ -289,5 +294,10 @@ footer{
     #mainProject{
         margin: 20px 25px 100px 25px;
     }
+
+    #main332{
+        margin: 20px 25px 100px 25px;
+    }
+
     
 }
