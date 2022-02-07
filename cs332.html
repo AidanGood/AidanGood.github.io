@@ -93,15 +93,34 @@
                             This is done with <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/v4.3.2/esp32s2/api-reference/peripherals/gpio.html?highlight=gpio_set_level#_CPPv414gpio_set_level10gpio_num_t8uint32_t" target="_blank"><span class="code">gpio_set_level()</span></a>. And that's all there is to configuring the GPIO pins.
                             <br> For our future presentation my group decided to work on the <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/touch_pad.html#introduction" target="_blank">touch sensor</a>.
                             <br> <br>
-                            <a id="quick-jump-point"></a>
+                            <a id="week3"></a>
                             <br>
                         </p>
                     </div>
                     <h3 id="Chapter">Week 3</h3>
-                    <h4 id="Chapter">TBD</h4>
+                    <h4 id="Chapter" style="font-family: monospace; line-height: 0;">Touch_2_Digital.c</h4>
                     <div class="text-container">
                         <p>
-                            TBD
+                            Week 3 is primarily focused on learning about the touch capabilities. <a class="link" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/touch_pad.html" target="_blank">Here it is in the Espressif documentation</a>.<br>
+                            The touch sensor uses pins 1 - 14, and measures the "capacitance" of the object touching those pins. Using this, you can then determine if they are being pressed, and for how long.
+                             Since it measures all 14 pins independantly, this gives a lot of flexibility in setting up a matrix for ~112 unique buttons, or creatingt a sliding touch sensor. 
+                            <h3>Code Fragments</h3>
+                            Important 
+
+                            <h3>Figuring out how it really works</h3>
+                            According to the documentation, it measures the "capacitance" to determine if an object is being touched or not, but I think that this does not give enough detail. From playing around with it, I think it works as follows: There are two plates near eachother with set alternating voltages (as described in the docs) with the capacitance measured. An electrode connected to the pin is near these plates. As the voltage on the electrode changes, this causes 
+                            a change in the electric field of the two plates, which in turn causes the measured capacitance to change. Something akin to <a class="link" href="https://fieldscale.com/learn-capacitive-sensing/intro-to-capacitive-touch-sensors/" target="_blank">this explination of capacitance</a> except 
+                            instead of a finger it's the changing voltage that causes changes to the electric field. I find this the most plausible as extending a pin out with a wire so that it becomes effectively a mini-antena, and moving RF emmitting devices (cellular phones, etc.) near the wire causes the measured "capacitance" to change for <b>only the pin which has the wire attached</b>. 
+                            I believe the wire's voltage is changing due to the presence of RF signals being emmitted from the devices, and this voltage change causes the electice field to change, changing the measured capacitance. <br> <br> Such a distinction in how this system works is important
+                            because, as show by my experimentation, if wires of a non-inconsequental length (> ~10cm) are used between where the actual touching occurs and the board, using it for touch capabilities where a lot of RF noise is present needs to be taken into account. It also shows that 
+                            <i>touch</i> isn't what is actually being measured, but the voltage (voltage change?) on the pin is. <br> <br>
+                            Some other questionable experimentation done:
+                            <ul>
+                                <li>Connecting a touch pin to Ground causes the program to crash</li>
+                                <li>Connecting a touch pin to another touch pin causes the program to crash </li>
+                                <li>Holding wire touching pin, then touching metal computer shell with same finger touching the wire causes an even larger jump in measure "capacitance"</li>
+                            </ul>
+                            
                             <br> <br>
                             <a id="quick-jump-point"></a>
                             <br>
