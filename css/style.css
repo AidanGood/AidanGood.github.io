@@ -38,12 +38,14 @@ ul{
 .link{
     color: #e00000;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline;
+    color: #dddddd;
+
 }
 
 a{
-    text-decoration: none;
-    color: #e00000;
+    text-decoration: underline;
+    color: #dddddd;
 }
 
 /* colors:
@@ -207,7 +209,8 @@ a:hover{
 /* Chapter */
 #mainAbout #Chapter{
     margin-top: 10px;
-    text-align: center;
+    text-align: center;    
+    line-height: 1;
 }
 
 /* Project Page */
