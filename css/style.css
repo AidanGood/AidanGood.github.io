@@ -3,7 +3,7 @@ body{
     font-style: normal;
     font-weight: 400;
     font-stretch: 100%;
-    font: size 15px;
+    font: size 19px;
     line-height: 1.5;
     color: #dddddd;
     padding: 0;
@@ -155,12 +155,12 @@ a:hover{
 }
 
 #frontbody h3{
-    font-size: 24px;
+    font-size: 28px;
 }
 
 #frontbody .fbproject{
-    width: 70%;
     margin: auto;
+    margin-top: -15px;
     overflow: hidden;
     position: relative;
 
@@ -169,19 +169,21 @@ a:hover{
 
 #frontbody ul{
     list-style-type: circle;
-    padding-left: 50px;
-    padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 20px;
     /* background-color: #1b1b1b; */
     /* border: 2px solid magenta; */
 } 
 
 #frontbody li{
     text-align: left;
-    line-height: 1.4;    
+    line-height: 1.3;   
+    margin: 20px 0; 
 }
 
-
+#frontbody .name{
+    font-size: 24px;   
+}
 
 #frontbody a:hover{
     text-decoration: none;
@@ -206,7 +208,7 @@ a:hover{
     font-size: 20px;
 }
 
-/* Chapter */
+/* Chapter in weblinks subpage*/
 #mainAbout #Chapter{
     margin-top: 10px;
     text-align: center;    
@@ -222,6 +224,24 @@ a:hover{
 
 #mainProject #Chapter{
     margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#mainProject h4{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    /* border: 2px solid magenta; */
+}
+
+
+
+/* Subpages */
+#mainSubpage p{
+    font-size: 19px;
+}
+#mainSubpage #title{
     text-align: center;
 }
 

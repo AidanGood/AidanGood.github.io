@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Personal Website">
+        <meta name="keywords" content="Aidan Good, Computer Science, Recall Distortion">
+        <meta name="author" content="Aidan Good">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <title>Aidan Good | 2022 Paper</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <header>
+                <div class="container">
+                    <div id="FrontName">
+                        <h1><span class="highlight">William</span> Aidan Good</h1>
+                    </div>
+                    <nav>
+                        <u1>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../projects.html">Projects</a></li>
+                        </u1>
+                    </nav>
+                </div>
+            </header>
+
+            <div id="mainSubpage">
+                <div class="container">
+                    <h1 id="title">Recall Distortion in Neural Network Pruning <br> and the Undecayed Pruning Algorithm</h1>
+                    <p>
+                        Currently under review. <a href="https://arxiv.org/abs/2206.02976">Link to the main paper on arXiv.</a> <br>
+                        Poster accepted into the 2022 Sparsity in Neural Networks workshop. <br>
+                        <a href="../SNN_2022_Poster.pdf">Click to view PDF of Poster</a> <br>
+                    </p>
+                    <p>
+                        I starting working on this project in the summer of 2021 with Prof Thiago Serra. Initially set out to statistically measure if there were fairness issues introduced 
+                        by classical pruning methods, we find evidence of the existence of an "intensification effect", where class recalls above model accuracy before pruning get relatively better,
+                        and class recalls below model accuracy before pruning get relatively worse, after pruning. 
+                    </p>
+                    
+                    <p>
+                        <b>Abstract:</b> Pruning techniques have been successfully used in neural networks to trade accuracy for sparsity.
+                         However, this impact is not uniform: prior work has shown the recall for underrepresented classes in a dataset may be more negatively affected. 
+                         In this work, we study such relative distortions in recall by hypothesizing an intensification effect. 
+                         In addition, we propose a new pruning algorithm aimed at attenuating such effect. 
+                         Through statistical analysis, we have observed that intensification is less severe with our algorithm but nevertheless more pronounced with relatively more difficult tasks, less complex models, and higher pruning ratios.
+                        
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
