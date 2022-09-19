@@ -35,19 +35,37 @@
                         Also accepted into the 2022 Sparsity in Neural Networks workshop. <br>
                         <a href="../SNN_2022_Poster.pdf">Click here to view PDF of Poster</a> <br>
                     </p>
+
                     <p>
-                        I starting working on this project in the summer of 2021 with Prof Thiago Serra. Initially set out to statistically measure if there were fairness issues introduced 
-                        by classical pruning methods, we eventually shifted focus to finding evidence of the existence of an "intensification effect", where class recalls above model accuracy before pruning get relatively better,
-                        and class recalls below model accuracy before pruning get relatively worse, after pruning. 
-                    </p>
-                    
-                    <p>
-                        <b>Abstract:</b> Pruning techniques have been successfully used in neural networks to trade accuracy for sparsity.
+                        <b><u>Abstract:</u></b> Pruning techniques have been successfully used in neural networks to trade accuracy for sparsity.
                          However, this impact is not uniform: prior work has shown the recall for underrepresented classes in a dataset may be more negatively affected. 
                          In this work, we study such relative distortions in recall by hypothesizing an intensification effect. 
                          In addition, we propose a new pruning algorithm aimed at attenuating such effect. 
                          Through statistical analysis, we have observed that intensification is less severe with our algorithm but nevertheless more pronounced with relatively more difficult tasks, less complex models, and higher pruning ratios.
                         
+                    </p>
+                    
+                    <p>
+                        I starting working on this project in the summer of 2021 with Professor Thiago Serra. Initially set out to statistically measure if there were fairness issues introduced 
+                        by classical pruning methods, we eventually shifted focus to finding evidence of the existence of an "intensification effect", where class recalls above model accuracy before pruning get relatively better,
+                        and class recalls below model accuracy before pruning get relatively worse, after pruning. 
+                    </p>
+
+                    <p>
+                        To remove all the academic and mathematical fluff from the paper: working with "modern" vision neural network architectures (show the network a 
+                        picture of a dog and it can identify it is a dog), I found that pruning these networks (removing bits and pieces, done for several benefits like faster inferencing, smaller footprint, etc.) can introduce 
+                        a bias against certain classes. To quantify this, we created a metric called the <i>Intensification Ratio</i>. This measures when class recalls above model accuracy before pruning get relatively better,
+                        and class recalls below model accuracy before pruning get relatively worse, after pruning. We then statistically show that with randomly initialized models, this effect exists for certain 
+                        architectures, datasets, and pruning strategies. Suprisingly, at moderate pruning rates (50- 75%) we observe an opposite effect than what we expected, where the classes initially worse before pruning 
+                        actually improve after pruning. 
+                    </p>
+
+                    <p>
+                        There already exists a growing field of research in the fairness issues around neural network pruning, possibly the most well-known being the work of
+                        Sara Hooker. She and her team had already created a metric to quantify this issue, PIEs (or CIEs depending on which paper you read). The PIE metric counts the number of images classified differently by the
+                        pruned neural network compared to the original network. And here in my opinion is why our metric, the Intensificaion Ratio, is better. Using PIEs, it says that anything different is counted against that
+                        pruned model, regardless of whether the original model <i>got it wrong</i> and the pruned model later <i>got it right</i>. See the issue? Conversly, our metric is able to highlight when this situation occurs,
+                        and is how we made the observation that at moderate prunning rates (50- 75%) we see fairness actaully improving with the models we studied.
                     </p>
                     
                 </div>
