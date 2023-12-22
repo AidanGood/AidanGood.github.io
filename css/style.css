@@ -126,12 +126,17 @@ a:hover{
     color: #dddddd;
     padding: 20px 0px 0px 0px;
     font-size: 25px;
-    line-height: 0;
 }
 
 #showcase h1{
     margin-top: 20px;
     font-size: 40px;
+    line-height: 0;
+}
+
+#showcase p{
+    /* padding-top: 0px; */
+    /* border: 2px solid magenta;  */
 }
 
 

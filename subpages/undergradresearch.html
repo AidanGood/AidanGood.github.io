@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Personal Website">
+        <meta name="keywords" content="Aidan Good, Computer Science, Recall Distortion">
+        <meta name="author" content="Aidan Good">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <title>Aidan Good | 2022 Paper</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <header>
+                <div class="container">
+                    <div id="FrontName">
+                        <h1><span class="highlight">William</span> Aidan Good</h1>
+                    </div>
+                    <nav>
+                        <u1>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../projects.html">Projects</a></li>
+                        </u1>
+                    </nav>
+                </div>
+            </header>
+
+            <div id="mainSubpage">
+                <div class="container">
+                    <h1 id="title">Undergraduate Research</h1>
+                    <div class="container">
+                    <p class="bubble">
+                        While in undergrad, I had the opporunity to work with Professor Thiago Serra on studying the effects of neural network pruning.
+                        In the ~2 years I worked there we got 2 papers accepted, with a mostly undergraduate team, into prestegious ML conferences such as NeurIPS.
+                    </p>
+                    </div>
+
+                    <h1 id="title">Recall Distortion in Neural Network Pruning <br> and the Undecayed Pruning Algorithm</h1>
+                    <p class="bubble">
+                        Paper acepted into the NeurIPS 2022 Conference. <a href="https://arxiv.org/abs/2206.02976">Link to the main paper on arXiv.</a> <br>
+                        Also accepted into the 2022 Sparsity in Neural Networks workshop. <br>
+                        <a href="../image/SNN_2022_Poster.pdf">Click here to view a PDF of the Poster</a> <br>
+                        <br>
+                        <b>Abstract:</b> Pruning techniques have been successfully used in neural networks to trade accuracy for sparsity.
+                         However, this impact is not uniform: prior work has shown the recall for underrepresented classes in a dataset may be more negatively affected. 
+                         In this work, we study such relative distortions in recall by hypothesizing an intensification effect. 
+                         In addition, we propose a new pruning algorithm aimed at attenuating such effect. 
+                         Through statistical analysis, we have observed that intensification is less severe with our algorithm but nevertheless more pronounced with relatively more difficult tasks, less complex models, and higher pruning ratios.
+                        
+                    </p>
+                    
+                    <h1 id="title">Getting Away with More Network Pruning: <br> From Sparsity to Geometry and Linear Regions</h1>
+                    <p class="bubble">
+                        Paper acepted into the CPAIOR 2023 Conference. <a href="https://arxiv.org/abs/2301.07966">Link to the main paper on arXiv.</a> <br>
+                        <br>
+                        <b>Abstract:</b> One surprising trait of neural networks is the extent to which their connections can be pruned with little to no effect on accuracy.
+                         But when we cross a critical level of parameter sparsity, pruning any further leads to a sudden drop in accuracy.
+                         This drop plausibly reflects a loss in model complexity, which we aim to avoid. 
+                         In this work, we explore how sparsity also affects the geometry of the linear regions defined by a neural network, and consequently reduces the expected maximum number of linear regions based on the architecture. 
+                         We observe that pruning affects accuracy similarly to how sparsity affects the number of linear regions and our proposed bound for the maximum number. 
+                         Conversely, we find out that selecting the sparsity across layers to maximize our bound very often improves accuracy in comparison to pruning as much with the same sparsity in all layers, thereby providing us guidance on where to prune.
+                        
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
